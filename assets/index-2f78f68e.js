@@ -341,15 +341,7 @@ const F1 = async t=>({
     return o
 }
 ;
-function H1(t) {
-    const o = [];
-    return D1.forEach(a=>{
-        const i = t.find(y=>y.slug === a.slug);
-        i && o.push(O1(i, a))
-    }
-    ),
-    o
-}
+
 function O1(t, o) {
     return {
         id: t.id,
@@ -431,14 +423,14 @@ const b0 = O((t,o)=>({
             let e = [];
             const x = S0()
               , k = S0();
-            y && y.ok !== !1 && (e = H1(y),
+            y && y.ok !== !1,
             e.map(c=>(P0.includes(c.slug) && c.isCompleted && (c.isHidden = !1),
             c)),
             e.map(c=>(!c.isCompleted && c.slug === "join-blum-tribe" && k && (c.isHidden = !1),
             c)),
             t(()=>({
                 tasks: e
-            })));
+            }));
             const l = e.filter(c=>c.isCompleted && W1.includes(c.slug)).length > 0;
             x && !l && o().actions.fetchNotcoinTier(a)
         }
